@@ -1,0 +1,64 @@
+<!-- Article Hero Section Component -->
+<div class="position-relative hero-section overflow-hidden">
+  <!-- Background Image -->
+  <img
+    [alt]="data.title"
+    class="position-absolute top-0 start-0 w-100 h-100 hero-image"
+    [src]="data.image"
+  />
+
+  <!-- Gradients -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 gradient-bottom"></div>
+  <div class="position-absolute top-0 start-0 w-100 h-100 gradient-right"></div>
+
+  <!-- Breadcrumb -->
+  <div class="position-absolute breadcrumb-container">
+    <nav class="d-inline-flex align-items-center gap-2 breadcrumb-nav">
+      <a class="breadcrumb-link" routerLink="" data-discover="true">
+        <i class="fa-solid fa-home"></i>
+      </a>
+      <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+      <a class="breadcrumb-link" routerLink="/blog" data-discover="true">المدونة</a>
+      <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+      <span class="breadcrumb-active">{{ data.category }}</span>
+    </nav>
+  </div>
+
+  <!-- Content -->
+  <div class="position-absolute bottom-0 start-0 end-0 hero-content">
+    <div class="container hero-container">
+      <!-- Meta Info -->
+      <div class="d-flex flex-wrap align-items-center gap-3 mb-4 meta-wrapper">
+        <a
+          class="category-link"
+          routerLink="/blog"
+          [queryParams]="{ category: data.category }"
+          data-discover="true"
+          >بورتريه</a
+        >
+        <div class="d-flex align-items-center gap-3 meta-info">
+          <span class="d-flex align-items-center gap-2 meta-item">
+            <i class="fa-regular fa-calendar"></i>
+            {{ formatArabicDate(data.date) }}
+          </span>
+          <span class="d-flex align-items-center gap-2 meta-item">
+            <i class="fa-regular fa-clock"></i>
+            {{ data.readTime }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="hero-title text-white mb-4">{{ data.title }}</h1>
+
+      <!-- Author Card -->
+      <div class="d-flex align-items-center gap-3 author-card">
+        <img [alt]="data.author.name" class="author-avatar" [src]="data.author.avatar" />
+        <div>
+          <p class="author-name mb-0">{{ data.author.name }}</p>
+          <p class="author-role mb-0">{{ data.author.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

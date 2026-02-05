@@ -17,4 +17,10 @@ export class GetDataService {
   getToIndex(start: number, index: number): Posts[] {
     return this.posts.slice(start, index);
   }
+  getslugs(): string[] {
+    return this.posts.map((post) => post.slug);
+  }
+  getBySlug(slug: string): Posts {
+    return this.posts.find((post) => post.slug === slug)!;
+  }
 }
