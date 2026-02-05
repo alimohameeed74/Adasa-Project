@@ -1,0 +1,111 @@
+/* Footer component */
+/* ============================ */
+footer,
+.last{
+    background-color: var(--color-two);
+    border-top: 1px solid rgba(128, 128, 128, 0.233);
+}
+.orange-circle {
+  width: 44px;               
+  height: 44px;             
+  background: linear-gradient(to bottom right, var(--freq-color), #ea580c);
+  transition: all 0.3s ease; 
+  cursor: pointer;
+}
+.footer-icon:hover .orange-circle{
+  transform: scale(1.05);
+}
+.circle-text, .name {
+  font-size:  var(--fz-20);
+}
+footer p{
+    font-size: var(--fz-14);
+    color: oklch(0.556 0 0);
+}
+.social-link {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-one);
+    font-size: var(--fz-20);
+    transition: all 0.3s ease;
+    color: oklch(0.556 0 0);
+    border: 1px solid oklch(0.556 0 0);
+}
+.social-link:hover {
+  background: linear-gradient(to bottom right, var(--freq-color), #ea580c);
+  border-color: transparent;
+  color: var(--white-color);
+  transform: scale(1.1);
+}
+.gradient-line {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(to right, var(--freq-color), #facc15);
+  border-radius: 9999px;
+}
+footer h3{
+    font-size: var(--fz-16);
+}
+.link-neutral {
+  font-size: var(--fz-14);
+  color: oklch(0.556 0 0);
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.link-neutral:hover {
+  color: var(--freq-color);
+}
+.arrow-icon {
+  font-size: 0.875rem;
+  opacity: 0;
+  margin-right: -16px;
+  transition: all 0.3s;
+  transform: rotate(180deg);
+  color: var(--freq-color);
+}
+.link-neutral:hover .arrow-icon {
+  opacity: 1;
+  margin-right: 0;
+}
+.input-custom {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-one);
+  border: 1px solid #262626;
+  border-radius: 1rem;
+  color: #fff;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+}
+.input-custom::placeholder {
+  color: #71717a;
+}
+.input-custom:focus {
+  outline: none;
+  border-color: var(--freq-color);
+  box-shadow: 0 0 0 1px var(--freq-color);
+}
+.btn-custom {
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  background-color: var(--freq-color);
+
+}
+.btn-custom:hover {
+  border-color: transparent;
+  transform: translateY(-5px);
+}
+.footer-link {
+  color: oklch(0.556 0 0);
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.footer-link:hover,
+.fa-heart {
+  color: var(--freq-color);
+}
+/* End of Footer Component */
+/* ============================ */

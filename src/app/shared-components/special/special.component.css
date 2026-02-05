@@ -1,0 +1,29 @@
+/* Special component */
+/* ============================ */
+.section-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #f97316;
+  background-color: #22150B;
+  border: 2px solid #f973164d;
+  
+}
+
+.pulse-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #f97316;
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+/* ============================ */
+/* End of Special Component */

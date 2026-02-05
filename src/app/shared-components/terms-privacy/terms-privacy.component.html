@@ -1,0 +1,145 @@
+<!-- Terms of Service Component -->
+<section class="flex-grow-1">
+  <div class="bg-dark-custom">
+    <!-- Header Section -->
+    <header class="position-relative py-5 overflow-hidden">
+      <!-- Background layers -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark-layer"></div>
+      <div class="position-absolute top-0 start-0 w-100 h-100 grid-background"></div>
+
+      <!-- Glow effects -->
+      <div class="position-absolute top-0 start-0 w-100 h-100 opacity-30">
+        <div class="blob blob-yellow"></div>
+      </div>
+
+      <!-- Header content -->
+      <div class="position-relative container text-center header-content">
+        <!-- Breadcrumb navigation -->
+        <nav class="d-flex align-items-center justify-content-center gap-2 breadcrumb-nav">
+          <a class="text-decoration-none breadcrumb-link" routerLink="" data-discover="true"
+            >الرئيسية</a
+          >
+          <i class="fas fa-chevron-right breadcrumb-arrow"></i>
+          <span class="breadcrumb-active">
+            <ng-content select="#page-name"></ng-content>
+          </span>
+        </nav>
+
+        <!-- Icon -->
+        <div class="d-inline-flex align-items-center justify-content-center icon-wrapper mb-3">
+          <i class="icon-svg d-flex justify-content-center align-items-center" [class]="icon"></i>
+        </div>
+
+        <!-- Title -->
+        <h1 class="main-title fw-bold text-white mb-3">
+          <ng-content select="#page-title"></ng-content>
+        </h1>
+        <p class="text-neutral-400 fs-5">آخر تحديث: 15 يناير 2026</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+      <!-- Important Notice -->
+      <div class="alert-notice mb-5">
+        <div class="d-flex gap-3">
+          <div class="flex-shrink-0">
+            <i class="notice-icon" [class]="notice.icon"></i>
+          </div>
+          <div>
+            <h3 class="fw-semibold notice-title mb-1">{{ notice.imp }}</h3>
+            <p class="notice-text mb-0">
+              {{ notice.desc }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terms Sections -->
+      <div class="terms-sections">
+        @for (item of array; track $index) {
+          <section class="term-section mb-5">
+            <h2 class="fs-3 fw-bold text-white mb-3 d-flex align-items-center gap-3">
+              <span class="section-number">{{ item.number }}</span>
+              {{ item.title }}
+            </h2>
+            <div class="section-content">
+              <p class="text-neutral-400 mb-3 section-text">
+                {{ item.desc }}
+              </p>
+              @if (item.number === 2) {
+                @if (item.desc !== '') {
+                  <p class="text-neutral-300 fw-medium mb-3">بموجب هذا الترخيص لا يجوز لك:</p>
+                }
+                <ul class="list-unstyled">
+                  @for (item_ of items1; track $index) {
+                    <li class="d-flex align-items-center gap-3 text-neutral-400 mb-2">
+                      <i class="fas fa-times restriction-icon flex-shrink-0"></i>
+                      <span> {{ item_ }} </span>
+                    </li>
+                  }
+                </ul>
+              }
+              @if (item.number === 3 && item.desc === '') {
+                <ul class="list-unstyled">
+                  @for (item__ of items2; track $index) {
+                    <li class="d-flex align-items-center gap-3 text-neutral-400 mb-2">
+                      <i class="fas fa-times restriction-icon flex-shrink-0"></i>
+                      <span> {{ item__ }} </span>
+                    </li>
+                  }
+                </ul>
+              }
+              @if (item.number === 5) {
+                @if (item.desc !== '') {
+                  <p class="text-neutral-300 fw-medium mb-3">يجب ألا يكون محتواك:</p>
+                  <ul class="list-unstyled">
+                    @for (item___ of items2; track $index) {
+                      <li class="d-flex align-items-center gap-3 text-neutral-400 mb-2">
+                        <i class="fas fa-times restriction-icon flex-shrink-0"></i>
+                        <span>{{ item___ }}</span>
+                      </li>
+                    }
+                  </ul>
+                }
+              }
+              @if (item.number === 6 && item.desc === '') {
+                <ul class="list-unstyled">
+                  @for (item____ of items3; track $index) {
+                    <li class="d-flex align-items-center gap-3 text-neutral-400 mb-2">
+                      <i class="fas fa-times restriction-icon flex-shrink-0"></i>
+                      <span>{{ item____ }}</span>
+                    </li>
+                  }
+                </ul>
+              }
+              @if (item.number === 7) {
+                <a
+                  href="mailto:hello@adasah.com"
+                  class="d-inline-flex align-items-center gap-2 contact-link text-decoration-none fw-medium"
+                >
+                  <i class="fas fa-envelope contact-icon"></i>
+                  hello@adasah.com
+                </a>
+              }
+            </div>
+          </section>
+        }
+      </div>
+
+      <!-- Footer Notice -->
+      <div class="mt-5 pt-4 footer-notice">
+        <p class="text-center footer-text mb-0">
+          باستخدام موقعنا، فإنك توافق على شروط الخدمة هذه. انظر أيضاً
+          <a
+            class="privacy-link text-decoration-none fw-medium"
+            [routerLink]="linkTo"
+            data-discover="true"
+          >
+            <ng-content select="#link"></ng-content> </a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

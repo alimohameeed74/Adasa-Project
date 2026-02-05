@@ -1,0 +1,32 @@
+<!-- Values Section Component -->
+<section class="values-section border-top border-bottom border-secondary-custom">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="text-center mb-5 section-header">
+      <h2
+        class="values-title fw-bold text-white mb-3 d-flex align-items-center justify-content-center gap-3"
+      >
+        <span class="title-bar bar-gradient-1"></span>
+        قيمنا
+        <span class="title-bar bar-gradient-2"></span>
+      </h2>
+      <p class="values-subtitle text-neutral-400 mx-auto">المبادئ التي توجه كل ما نقوم بإنشائه</p>
+    </div>
+
+    <!-- Values Grid -->
+    <div class="row g-4">
+      @for (item of aboutValueData; track $index) {
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div class="value-card text-center position-relative overflow-hidden">
+            <div class="card-gradient position-absolute top-0 start-0 w-100 h-100"></div>
+            <div class="position-relative card-content">
+              <i class="value-icon" [class]="item.icon"></i>
+              <h3 class="value-title fw-bold text-white mb-2">{{ item.title }}</h3>
+              <p class="value-description text-neutral-400 mb-0">{{ item.desc }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

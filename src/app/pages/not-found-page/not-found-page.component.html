@@ -1,0 +1,71 @@
+<section class="flex-grow-1">
+  <div
+    class="vh-100 d-flex align-items-center justify-center position-relative overflow-hidden bg-dark-custom"
+  >
+    <div class="position-absolute top-0 start-0 w-100 h-100 grid-background"></div>
+
+    <div class="position-absolute top-0 start-0 w-100 h-100 opacity-40">
+      <div class="blob blob-orange"></div>
+      <div class="blob blob-yellow"></div>
+    </div>
+
+    <div class="position-relative text-center px-4 content-wrapper">
+      <div class="position-relative mb-4">
+        <h1 class="display-404">404</h1>
+        <div class="display-404-shadow">404</div>
+      </div>
+
+      <div class="position-relative icon-container mx-auto mb-4">
+        <div class="position-absolute top-0 start-0 w-100 h-100 icon-bg"></div>
+        <div
+          class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+        >
+          <i class="fas fa-frown icon-main"></i>
+        </div>
+        <div class="decoration decoration-square"></div>
+        <div class="decoration decoration-circle"></div>
+      </div>
+
+      <h2 class="fw-bold text-white mb-3">عفواً! الصفحة غير موجودة</h2>
+      <p style="color: oklch(0.708 0 0)" class="mb-4 fw-normal">
+        الصفحة التي تبحث عنها غير موجودة أو تم نقلها. دعنا نعيدك إلى المسار الصحيح.
+      </p>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
+        <a
+          class="btn rounded-4 btn-primary-custom d-inline-flex align-items-center justify-content-center gap-2"
+          routerLink=""
+          data-discover="true"
+        >
+          <i class="fas fa-home"></i>
+          الذهاب للرئيسية
+        </a>
+        <a
+          class="btn rounded-4 btn-secondary-custom d-inline-flex align-items-center justify-content-center gap-2"
+          routerLink="/blog"
+          data-discover="true"
+        >
+          <i class="fas fa-newspaper"></i>
+          تصفح المقالات
+        </a>
+      </div>
+
+      <div class="pt-4 border-top border-secondary-custom">
+        <p style="color: oklch(0.556 0 0)" class="small fw-normal mb-3">قد تجد هذه مفيدة:</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 small">
+          <a class="text-warning-custom fw-medium" routerLink="/blog" data-discover="true"
+            >المدونة</a
+          >
+          <span style="color: oklch(0.556 0 0)">•</span>
+          <a class="text-warning-custom fw-medium" routerLink="/about" data-discover="true"
+            >من نحن</a
+          >
+          <span style="color: oklch(0.556 0 0)">•</span>
+          <a class="text-warning-custom fw-medium" routerLink="/privacy-policy" data-discover="true"
+            >الخصوصية</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,229 @@
+/* Latest Articles component */
+/* ============================ */
+.latest-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #0a0a0a;
+}
+
+.gradient-overlay-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 33.333333%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(249, 115, 22, 0.05), transparent);
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #f97316;
+  gap: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #a3a3a3;
+  max-width: 32rem;
+  font-size: 1rem;
+}
+
+.link-all {
+  color: #f97316;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-all:hover {
+  color: #fb923c;
+}
+
+.arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.link-all:hover .arrow-icon {
+  transform: rotate(180deg) translateX(0.25rem);
+}
+
+.article-card {
+  background-color: #161616;
+  border-radius: 1.5rem;
+  border: 1px solid #262626;
+  transition: all 0.5s ease;
+}
+
+.article-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.article-image-container {
+  position: relative;
+  height: 13rem;
+}
+
+.article-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease-out;
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent, transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.article-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.category-badge-top {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.category-pill {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid #333333;
+}
+
+.article-body {
+  padding: 1.5rem;
+}
+
+.article-meta {
+  font-size: 0.875rem;
+  color: #737373;
+}
+
+.read-time-small {
+  color: #737373;
+}
+
+.time-icon-small {
+  width: 1rem;
+  height: 1rem;
+}
+
+.meta-dot {
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: #525252;
+  border-radius: 50%;
+}
+
+.article-date-small {
+  color: #737373;
+}
+
+.article-title-small {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.article-card:hover .article-title-small {
+  color: #f97316;
+}
+
+.article-excerpt-small {
+  color: #a3a3a3;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-footer-small {
+  padding-top: 1rem;
+  border-top: 1px solid #262626;
+}
+
+.author-avatar-small {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #262626;
+}
+
+.author-name-small {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.author-role-small {
+  font-size: 0.75rem;
+  color: #737373;
+}
+
+.arrow-circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(249, 115, 22, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.article-card:hover .arrow-circle {
+  background-color: #f97316;
+  border-color: transparent;
+}
+
+.arrow-circle-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #f97316;
+  transform: rotate(180deg);
+  transition: color 0.3s ease;
+}
+
+.article-card:hover .arrow-circle-icon {
+  color: #ffffff;
+}
+/* ============================ */
+/* End of Latest Articles Component */

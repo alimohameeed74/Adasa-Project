@@ -1,0 +1,106 @@
+<footer class="py-4">
+  <div class="container mb-3">
+    <div class="row g-4 py-3">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="footer-item">
+          <div class="mb-3 d-flex justify-content-start align-items-center footer-icon">
+            <a
+              routerLink=""
+              class="ms-3 circle-text orange-circle d-flex align-items-center justify-content-center rounded shadow fw-bold text-white"
+              >ع
+            </a>
+            <a routerLink="" class="text-white fw-bold name">عدسه</a>
+          </div>
+          <p class="fw-normal">
+            مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير
+            مهاراتكم.
+          </p>
+          <ul class="d-flex justify-content-start align-items-center">
+            @for (socialLink of socialLinks; track $index) {
+              <li class="ms-2">
+                <a
+                  [href]="socialLink.ref"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-link d-flex align-items-center justify-content-center rounded-3 shadow"
+                >
+                  <i class="fa-brands" [class]="socialLink.icon"></i>
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="footer-item">
+          <h3 class="mb-4 text-white fw-semibold mb-3 d-flex align-items-center gap-2">
+            <span class="gradient-line"></span>
+            استكشف
+          </h3>
+          <ul class="nav flex-column gap-2">
+            @for (pagesLink of pagesLinks; track $index) {
+              <li class="nav-item w-25 p-0 mb-2">
+                <a
+                  [routerLink]="pagesLink.ref"
+                  class="nav-link p-0 d-flex align-items-center gap-2 link-neutral"
+                >
+                  <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                  {{ pagesLink.name }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="footer-item">
+          <h3 class="mb-4 text-white fw-semibold mb-3 d-flex align-items-center gap-2">
+            <span class="gradient-line"></span>
+            التصنيفات
+          </h3>
+          <ul class="nav flex-column gap-2">
+            @for (catergoriesLink of catergoriesLinks; track $index) {
+              <li class="nav-item w-50 p-0 mb-2">
+                <a
+                  [routerLink]="catergoriesLink.ref"
+                  class="nav-link p-0 d-flex align-items-center gap-2 link-neutral"
+                >
+                  <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                  {{ catergoriesLink.name }}
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="footer-item">
+          <h3 class="mb-4 text-white fw-semibold mb-3 d-flex align-items-center gap-2">
+            <span class="gradient-line"></span>
+            ابقى على اطلاع
+          </h3>
+          <p class="mb-3">اشترك للحصول على أحدث المقالات والتحديثات.</p>
+          <input
+            type="email"
+            placeholder="أدخل بريدك الإلكتروني"
+            class="form-control input-custom mb-2"
+          />
+          <button type="submit" class="text-white btn btn-custom w-100 mt-2">اشترك</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="last py-3">
+    <div class="container py-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <p class="mb-2 mb-md-0 text-center">
+          © 2026 عدسة. صنع بكل <i class="fa-solid fa-heart text-orange"></i> جميع الحقوق محفوظة.
+        </p>
+        <div class="d-flex gap-3">
+          <a routerLink="/privacy-policy" class="footer-link small ms-2">سياسة الخصوصية</a>
+          <a routerLink="/terms-of-services" class="footer-link small">شروط الخدمة</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

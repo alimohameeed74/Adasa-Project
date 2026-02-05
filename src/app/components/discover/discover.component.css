@@ -1,0 +1,122 @@
+/* Dicover component */
+/* ============================ */
+.categories-section {
+  background: #111;
+  border-top: 1px solid #262626;
+  border-bottom: 1px solid #262626;
+}
+
+.section-label {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  max-width: 420px;
+  color: #9ca3af;
+  font-size: 0.75rem;
+}
+
+.category-card {
+  position: relative;
+  display: block;
+  padding: 24px;
+  height: 100%;
+  border-radius: 16px;
+  background: #161616;
+  border: 1px solid #262626;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f97316, #facc15);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.category-card:hover .card-overlay {
+  opacity: 1;
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f97316;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover .icon-box {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-color: transparent;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.category-count {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.category-card:hover .category-count {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.arrow-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #262626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.category-card:hover .arrow-box {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+/* End of Dicover component */
+/* ============================ */
+/* Media Queries If Exists */
+@media (min-width: 576px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+/* End of Media Queries */

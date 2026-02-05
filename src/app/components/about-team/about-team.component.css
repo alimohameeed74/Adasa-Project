@@ -1,0 +1,145 @@
+/* About-Team component */
+/* ============================ */
+.team-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #0a0a0a;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #f97316;
+}
+
+.team-title {
+  font-size: var(--one-half-rem);
+}
+
+.team-subtitle {
+  font-size: var(--one-rem);
+  max-width: 42rem;
+}
+
+.text-neutral-400 {
+  color: #a3a3a3;
+}
+
+.team-card {
+  padding: 1.5rem;
+  background-color: #161616;
+  border-radius: 1rem;
+  border: 1px solid #262626;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.member-avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  ring: 4px solid #262626;
+  box-shadow: 0 0 0 4px #262626;
+  transition: box-shadow 0.3s ease;
+}
+
+.team-card:hover .member-avatar {
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.3);
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: -0.25rem;
+  right: -0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #f97316;
+  border-radius: 50%;
+  border: 2px solid #161616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verified-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #ffffff;
+}
+
+.member-name {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.member-role {
+  color: #f97316;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.social-links {
+  gap: 0.75rem;
+}
+
+.social-link {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #262626;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #737373;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.social-link-twitter:hover {
+  background-color: #f97316;
+  color: #ffffff;
+}
+
+.social-link-github:hover {
+  background-color: #171717;
+  color: #ffffff;
+}
+
+.social-link-linkedin:hover {
+  background-color: #0077b5;
+  color: #ffffff;
+}
+/* ============================ */
+/* End of About-Team Component */
+
+/* Media Queries If Exists */
+@media (min-width: 576px) {
+  .team-title {
+    font-size: 1.875rem;
+  }
+
+  .team-subtitle {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 768px) {
+  .team-title {
+    font-size: 2.25rem;
+  }
+}
+/* End of Media Queries */

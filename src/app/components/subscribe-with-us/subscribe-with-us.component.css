@@ -1,0 +1,163 @@
+/* Subscribe component */
+/* ============================ */
+.newsletter-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #0a0a0a;
+}
+
+.glow-background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background-color: rgba(249, 115, 22, 0.1);
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.newsletter-card {
+  background-color: #161616;
+  border-radius: 1.5rem;
+  border: 1px solid #262626;
+  padding: 2rem;
+}
+
+.newsletter-icon {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(to bottom right, #f97316, #ea580c);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-svg {
+  width: 2rem;
+  height: 2rem;
+  color: #ffffff;
+}
+
+.newsletter-title {
+  font-size: var(--one-rem);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #f97316, #eab308);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.newsletter-description {
+  font-size: var(--one-rem);
+  max-width: 36rem;
+}
+
+.text-neutral-400 {
+  color: #a3a3a3;
+}
+
+.newsletter-form {
+  max-width: 32rem;
+}
+
+.form-input {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background-color: #0a0a0a;
+  border: 1px solid #262626;
+  color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: #737373;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(249, 115, 22, 0.5);
+}
+
+.btn-submit {
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #f97316, #ea580c);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(to right, #ea580c, #c2410c);
+}
+
+.newsletter-stats {
+  font-size: 0.875rem;
+  color: #737373;
+}
+
+.avatars-group {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid #161616;
+  margin-left: -0.5rem;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.stat-text {
+  color: #737373;
+}
+
+.stat-number {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.stat-separator {
+  color: #262626;
+}
+/* ============================ */
+/* End of Subscribe Component */
+
+/* Media Queries If Exists */
+@media (min-width: 576px) {
+  .newsletter-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .newsletter-description {
+    font-size: 1.125rem;
+  }
+  .newsletter-title {
+    font-size: 2.25rem;
+  }
+
+  .newsletter-card {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .newsletter-card {
+    padding: 4rem;
+  }
+}
+/* End of Media Queries */

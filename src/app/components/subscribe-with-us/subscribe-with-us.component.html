@@ -1,0 +1,73 @@
+<!-- Subscribe Section Component -->
+<section class="newsletter-section position-relative overflow-hidden">
+  <!-- Glow effect -->
+  <div class="glow-background"></div>
+
+  <!-- Content -->
+  <div class="position-relative container">
+    <div class="newsletter-card text-center">
+      <!-- Icon -->
+      <div class="newsletter-icon mx-auto mb-4">
+        <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Title -->
+      <h2 class="newsletter-title fw-bold text-white mb-3">
+        اشترك في <span class="gradient-text">نشرتنا الإخبارية</span>
+      </h2>
+
+      <!-- Description -->
+      <p class="newsletter-description text-neutral-400 mb-4 mx-auto">
+        احصل على نصائح التصوير الحصرية ودروس جديدة مباشرة في بريدك الإلكتروني
+      </p>
+
+      <!-- Form -->
+      <form class="d-flex flex-column flex-sm-row gap-3 newsletter-form mx-auto mb-4">
+        <input
+          placeholder="أدخل بريدك الإلكتروني"
+          class="form-input flex-grow-1"
+          type="email"
+          required
+        />
+        <button type="submit" class="btn-submit">اشترك الآن</button>
+      </form>
+
+      <!-- Stats -->
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-center gap-3 newsletter-stats"
+      >
+        <div class="d-flex align-items-center gap-3">
+          <div class="avatars-group">
+            <img
+              class="avatar"
+              alt=""
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+            />
+            <img
+              class="avatar"
+              alt=""
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+            />
+            <img
+              class="avatar"
+              alt=""
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+            />
+          </div>
+          <span class="stat-text">انضم لـ <span class="stat-number">+10,000</span> مصور</span>
+        </div>
+        <span class="stat-separator d-none d-sm-inline">•</span>
+        <span class="stat-text">بدون إزعاج</span>
+        <span class="stat-separator d-none d-sm-inline">•</span>
+        <span class="stat-text">إلغاء الاشتراك في أي وقت</span>
+      </div>
+    </div>
+  </div>
+</section>

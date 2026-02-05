@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+@import url("./sec-styles/colors.css");
+@import url("./sec-styles/font-size.css");
+@import url("./sec-styles/font-family.css");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: var(--main-font);
+}

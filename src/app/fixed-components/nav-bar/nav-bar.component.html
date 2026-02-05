@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a
+      (click)="toggle()"
+      class="navbar-brand m-0 d-flex justify-content-between align-items-center"
+      routerLink=""
+    >
+      <img src="favicon/favicon.png" alt="Website Logo" />
+      <div class="d-flex flex-column me-3">
+        <h1 class="mb-0 fw-bold">عدسه</h1>
+        <p class="mb-0 fw-normal">عالم التصوير الفوتوغرافي</p>
+      </div>
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      #toggler
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div #navBarContent class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav border p-1 mx-auto mb-2 mb-lg-0">
+        @for (link of navLinks; track $index) {
+          <li class="nav-item">
+            <a
+              (click)="toggle()"
+              class="nav-link"
+              aria-current="page"
+              [routerLink]="link.goTo"
+              [routerLinkActive]="activeClassess"
+              >{{ link.name }}</a
+            >
+          </li>
+        }
+      </ul>
+      <div class="d-flex align-items-center">
+        <button class="search-btn text-white p-2 d-none d-lg-flex">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a
+          (click)="toggle()"
+          routerLink="/blog"
+          class="start btn py-2 px-3 rounded-pill text-white fw-medium gradient-orange me-lg-3 me-0"
+        >
+          ابدأ القراءه
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
