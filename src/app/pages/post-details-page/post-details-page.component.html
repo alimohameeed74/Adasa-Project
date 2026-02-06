@@ -1,3 +1,6 @@
 <app-post-details-hero [data]="data"></app-post-details-hero>
-<app-post-details-middle></app-post-details-middle>
-<app-post-details-last></app-post-details-last>
+<app-post-details-middle [data]="data" [dataFromMiddle]="dataToMiddle"></app-post-details-middle>
+<app-post-details-last
+  [data]="dataByCategory.slice(0, 4)"
+  [showedData]="data"
+></app-post-details-last>

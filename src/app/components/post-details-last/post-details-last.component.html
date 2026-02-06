@@ -1,1 +1,58 @@
-<p>post-details-last works!</p>
+<!-- Related Articles Section Component -->
+<section class="related-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="d-flex align-items-center justify-content-between section-header-related">
+      <div class="d-flex align-items-center gap-3">
+        <span class="icon-wrapper d-flex align-items-center justify-content-center">
+          <i class="fa-solid fa-images icon-related"></i>
+        </span>
+        <div>
+          <h2 class="related-title text-white mb-0">مقالات قد تعجبك</h2>
+          <p class="related-subtitle mb-0">استكشف المزيد من المحتوى المميز</p>
+        </div>
+      </div>
+      <a
+        class="link-all-related d-none d-sm-flex align-items-center gap-2"
+        routerLink="/blog"
+        data-discover="true"
+      >
+        عرض الكل
+        <i class="fa-solid fa-arrow-left arrow-all"></i>
+      </a>
+    </div>
+
+    <!-- Related Articles Grid -->
+    <div class="row g-4">
+      @for (item of data; track $index) {
+        <div class="col-sm-6 col-lg-4">
+          <a
+            class="related-card d-block text-decoration-none position-relative overflow-hidden"
+            [routerLink]="`/blog/${item.slug}`"
+            data-discover="true"
+          >
+            <div class="position-relative related-image-wrapper overflow-hidden">
+              <img [alt]="item.title" class="related-image" [src]="item.image" />
+              <div class="related-gradient"></div>
+              <span class="related-badge"> {{ item.category }}</span>
+            </div>
+            <div class="related-content">
+              <h3 class="related-article-title">{{ item.title }}</h3>
+              <div class="d-flex align-items-center justify-content-between related-meta">
+                <span class="d-flex align-items-center gap-2 author-info-small">
+                  <img
+                    [alt]="item.author.name"
+                    class="author-avatar-tiny"
+                    [src]="item.author.avatar"
+                  />
+                  {{ item.author.name }}
+                </span>
+                <span class="read-time-tiny">{{ item.readTime }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

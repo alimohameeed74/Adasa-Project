@@ -1,0 +1,90 @@
+/* Sticky Filter Bar component */
+/* ============================ */
+.filter-bar {
+  /* position: sticky; */
+  top: 5rem;
+  z-index: 40;
+  background-color: #0a0a0a;
+  border-bottom: 1px solid #262626;
+}
+
+.search-wrapper {
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  padding-right: 3rem;
+  background-color: #161616;
+  border: 1px solid #262626;
+  border-radius: 0.75rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #737373;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #737373;
+  pointer-events: none;
+}
+
+.filter-buttons {
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn-active {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  color: #ffffff;
+  border: none;
+}
+
+.filter-btn-active:hover {
+  background: linear-gradient(to right, #ea580c, #c2410c);
+}
+
+.filter-btn-inactive {
+  background-color: #161616;
+  color: #a3a3a3;
+  border: 1px solid #262626;
+}
+
+.filter-btn-inactive:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  color: #ffffff;
+}
+/* ============================ */
+/* End of Sticky Filter Bar Component */
+
+/* Media Queries If Exists */
+@media (min-width: 768px) {
+  .search-wrapper {
+    width: 20rem;
+  }
+}
+/* End of Media Queries */

@@ -124,6 +124,18 @@
   background-color: #0077b5;
   color: #ffffff;
 }
+
+.team-grid {
+  height: 700px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.team-grid::-webkit-scrollbar {
+  display: none;
+}
 /* ============================ */
 /* End of About-Team Component */
 

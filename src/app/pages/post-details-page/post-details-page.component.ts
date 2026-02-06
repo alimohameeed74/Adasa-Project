@@ -1,6 +1,6 @@
+import { GetDataService } from './../../services/get-data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GetDataService } from '../../services/get-data.service.js';
 import { PostDetailsHeroComponent } from '../../components/post-details-hero/post-details-hero.component';
 import { PostDetailsMiddleComponent } from '../../components/post-details-middle/post-details-middle.component';
 import { PostDetailsLastComponent } from '../../components/post-details-last/post-details-last.component';
@@ -16,6 +16,8 @@ export class PostDetailsPageComponent implements OnInit {
   slug: string;
   slugs: string[];
   data;
+  dataByCategory: Posts[];
+  dataToMiddle;
   constructor(
     private activateRoute: ActivatedRoute,
     private postsService: GetDataService,
@@ -25,6 +27,8 @@ export class PostDetailsPageComponent implements OnInit {
     this.slug = '';
     this.slugs = this.postsService.getslugs();
     this.data = {};
+    this.dataByCategory = [];
+    this.dataToMiddle = {};
   }
 
   ngOnInit() {
@@ -33,11 +37,12 @@ export class PostDetailsPageComponent implements OnInit {
       if (slug) {
         if (!this.slugs?.includes(slug)) {
           this.router.navigate(['/404']);
-          console.log('not include');
         } else {
           this.slug = slug;
-          this.data = this.dataService.getBySlug(this.slug);
-          console.log('include');
+          const obj = this.dataService.getBySlug(this.slug);
+          this.data = obj;
+          this.dataByCategory = this.dataService.getByCategory(obj.category);
+          this.dataToMiddle = this.dataService.convertContentIntoArray(obj.content);
         }
       }
     });
