@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 import { Note } from '../../interfaces/note.js';
 import { TermsPrivacySection } from '../../interfaces/terms-privacy-section.js';
 
@@ -7,24 +7,23 @@ import { TermsPrivacySection } from '../../interfaces/terms-privacy-section.js';
   selector: 'app-terms-privacy',
   templateUrl: './terms-privacy.component.html',
   styleUrls: ['./terms-privacy.component.css'],
-  imports: [RouterLink]
+  imports: [RouterLink],
 })
 export class TermsPrivacyComponent implements OnInit {
-  @Input() icon:string = '';
-  @Input() notice:Note =  {
-      desc: '',
-      icon: '',
-      imp: ''
+  @Input() icon: string = '';
+  @Input() isPrivacy: boolean = false;
+  @Input() notice: Note = {
+    desc: '',
+    icon: '',
+    imp: '',
   };
-  @Input() linkTo:string = '';
+  @Input() linkTo: string = '';
+  @Input() icon2: string = '';
   @Input() array: TermsPrivacySection[] = [];
   @Input() items1: string[] = [];
   @Input() items2: string[] = [];
   @Input() items3: string[] = [];
-  constructor() {
-   }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

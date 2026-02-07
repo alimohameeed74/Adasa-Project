@@ -1,7 +1,7 @@
 /* Sticky Filter Bar component */
 /* ============================ */
 .filter-bar {
-  /* position: sticky; */
+  position: sticky;
   top: 5rem;
   z-index: 40;
   background-color: #0a0a0a;

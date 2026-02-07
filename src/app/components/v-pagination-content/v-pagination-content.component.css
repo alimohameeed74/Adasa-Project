@@ -1,0 +1,159 @@
+/* List View Articles component */
+/* ============================ */
+.list-view-section {
+  gap: 1.5rem;
+}
+
+.list-article {
+  background-color: #161616;
+  border-radius: 1rem;
+  border: 1px solid #262626;
+  transition: all 0.5s ease;
+}
+
+.list-article:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.list-article-image {
+  width: 100%;
+  height: 13rem;
+  flex-shrink: 0;
+}
+
+.list-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.list-article:hover .list-image {
+  transform: scale(1.05);
+}
+
+.list-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(22, 22, 22, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list-article:hover .list-image-overlay {
+  opacity: 1;
+}
+
+.list-article-content {
+  padding: 1.5rem;
+}
+
+.list-meta-wrapper {
+  gap: 0.75rem;
+}
+
+.list-category-badge {
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #f97316;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.list-meta-item {
+  font-size: 0.875rem;
+  color: #737373;
+}
+
+.list-meta-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.list-article-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.list-article:hover .list-article-title {
+  color: #f97316;
+}
+
+.list-article-excerpt {
+  color: #a3a3a3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.75;
+}
+
+.list-article-footer {
+  margin-top: auto;
+}
+
+.list-author-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #262626;
+}
+
+.list-author-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.list-author-role {
+  font-size: 0.75rem;
+  color: #737373;
+}
+
+.list-read-link {
+  color: #f97316;
+  font-weight: 600;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.list-article:hover .list-read-link {
+  gap: 0.75rem;
+}
+
+.list-arrow-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transform: rotate(180deg);
+}
+/* ============================ */
+/* End of List View Articles Component */
+
+/* Media Queries If Exists */
+@media (min-width: 768px) {
+  .list-article-image {
+    width: 18rem;
+    height: auto;
+  }
+
+  .list-article-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .list-article-image {
+    width: 20rem;
+  }
+}
+/* End of Media Queries */

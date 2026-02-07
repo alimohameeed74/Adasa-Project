@@ -1,27 +1,22 @@
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnChanges,
-  OnInit,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { Posts } from '../../interfaces/posts.js';
 import { GetDataService } from '../../services/get-data.service.js';
 import { EmptyComponent } from '../empty/empty.component';
+import { VPaginationContentComponent } from '../v-pagination-content/v-pagination-content.component';
+import { HPaginationContentComponent } from '../h-pagination-content/h-pagination-content.component';
 
 @Component({
   selector: 'app-pagination-content',
   templateUrl: './pagination-content.component.html',
   styleUrls: ['./pagination-content.component.css'],
-  imports: [RouterLink, EmptyComponent],
+  imports: [EmptyComponent, VPaginationContentComponent, HPaginationContentComponent],
 })
 export class PaginationContentComponent implements OnInit, OnChanges {
   @Input() category: string = '';
   @Input() searchedValue: string = '';
   @Output() clear = new EventEmitter();
+  view: boolean;
   data: Posts[];
 
   constructor(
@@ -29,6 +24,7 @@ export class PaginationContentComponent implements OnInit, OnChanges {
     private dataService: GetDataService,
   ) {
     this.data = [];
+    this.view = true;
   }
 
   ngOnInit() {
@@ -55,17 +51,14 @@ export class PaginationContentComponent implements OnInit, OnChanges {
       }
     }
   }
-  formatArabicDate(dateString: string): string {
-    const date = new Date(dateString);
-
-    return new Intl.DateTimeFormat('ar-EG', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    }).format(date);
-  }
 
   clearFilters() {
     this.clear.emit('جميع المقالات');
+  }
+  hView() {
+    this.view = true;
+  }
+  vView() {
+    this.view = false;
   }
 }

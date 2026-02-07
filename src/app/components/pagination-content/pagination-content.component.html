@@ -18,7 +18,12 @@
       <div class="d-flex justify-content-between align-items-center gap-2">
         <!-- View Toggle -->
         <div class="d-flex align-items-center view-toggle">
-          <button class="view-btn view-btn-active" title="عرض شبكي">
+          <button
+            class="view-btn"
+            [class]="view ? 'view-btn-active' : 'view-btn-inactive'"
+            title="عرض شبكي"
+            (click)="hView()"
+          >
             <svg class="view-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -28,7 +33,12 @@
               ></path>
             </svg>
           </button>
-          <button class="view-btn view-btn-inactive" title="عرض قائمة">
+          <button
+            class="view-btn"
+            [class]="!view ? 'view-btn-active' : 'view-btn-inactive'"
+            title="عرض قائمة"
+            (click)="vView()"
+          >
             <svg class="view-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 stroke-linecap="round"
@@ -43,78 +53,23 @@
     </div>
     <!-- Articles Grid -->
     <div class="articles-grid">
-      <div class="row g-4">
+      @if (view) {
+        <div class="row g-4">
+          @for (item of data; track $index) {
+            <div class="col-md-6 col-lg-4">
+              <app-h-pagination-content [item]="item"></app-h-pagination-content>
+            </div>
+          } @empty {
+            <app-empty></app-empty>
+          }
+        </div>
+      } @else {
         @for (item of data; track $index) {
-          <div class="col-md-6 col-lg-4">
-            <article class="listing-card overflow-hidden">
-              <a
-                class="d-block text-decoration-none"
-                [routerLink]="`/blog/${item.slug}`"
-                data-discover="true"
-              >
-                <div class="position-relative listing-image-wrapper overflow-hidden">
-                  <img [alt]="item.title" class="listing-image" [src]="item.image" />
-                  <div class="listing-overlay"></div>
-                  <div class="listing-badge-wrapper">
-                    <span class="listing-badge">{{ item.category }} </span>
-                  </div>
-                </div>
-                <div class="listing-content">
-                  <div class="d-flex align-items-center gap-3 listing-meta mb-3">
-                    <span class="d-flex align-items-center gap-1 meta-time">
-                      <svg class="meta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                      </svg>
-                      {{ item.readTime }}
-                    </span>
-                    <span class="meta-separator"></span>
-                    <span class="meta-date">{{ formatArabicDate(item.date) }} </span>
-                  </div>
-                  <h3 class="listing-title">{{ item.title }}</h3>
-                  <p class="listing-excerpt">
-                    {{ item.excerpt }}
-                  </p>
-                  <div class="d-flex align-items-center justify-content-between listing-footer">
-                    <div class="d-flex align-items-center gap-3">
-                      <img
-                        [alt]="item.author.name"
-                        class="listing-author-img"
-                        [src]="item.author.avatar"
-                      />
-                      <div>
-                        <p class="listing-author-name mb-0">{{ item.author.name }}</p>
-                        <p class="listing-author-role mb-0">{{ item.author.role }}</p>
-                      </div>
-                    </div>
-                    <div class="listing-arrow-circle">
-                      <svg
-                        class="listing-arrow-icon"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M9 5l7 7-7 7"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </article>
-          </div>
+          <app-v-pagination-content [item]="item"></app-v-pagination-content>
         } @empty {
           <app-empty></app-empty>
         }
-      </div>
+      }
     </div>
   </div>
 </section>
